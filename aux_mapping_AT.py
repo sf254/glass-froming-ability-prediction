@@ -31,7 +31,7 @@ def AT(i):#atomic table representation
         xj=index%11-1#col num
         X[0][xi][xj]=tx2_value[j]/100.0
     X_BMG=copy.deepcopy(X)
-    X_BMG[0][10][10]=1.0 #取1个点代表厚度
+    X_BMG[0][10][10]=1.0 #processing parameter
    
     if gfa=='[c]':
         Y=[0,0]
