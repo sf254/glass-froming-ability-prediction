@@ -18,7 +18,7 @@ gfa_dataset = pickle.load(open('gfa_dataset.txt', 'rb'))
 Z_row_column = pickle.load(open('Z_row_column.txt', 'rb'))
 new_index=[int(i[4]) for i in Z_row_column]#randomized sequence
 
-def RPTR(i):#正常次序1通道C，加入厚度在PTR中
+def RPTR(i):#randomized PTR
     #i='4 La$_{66}$Al$_{14}$Cu$_{10}$Ni$_{10}$ [c][15]'
     X= [[[0.0 for ai in range(18)]for aj in range(9)] for ak in range(1) ]
     gfa=re.findall('\[[a-c]?\]',i)[0]
@@ -33,7 +33,7 @@ def RPTR(i):#正常次序1通道C，加入厚度在PTR中
         xj=int(Z_row_column[index-1][2])#col num
         X[0][xi-1][xj-1]=tx2_value[j]/100.0
     X_BMG=copy.deepcopy(X)
-    X_BMG[0][0][8]=1.0 #取1个点代表厚度
+    X_BMG[0][0][8]=1.0 #processing parameter
     
     if gfa=='[c]':
         Y=[0,0]
@@ -63,7 +63,7 @@ for i in  gfa_dataset:
 gfa_data_form=[]
 gfa_data_form_b=[]
 #------------------------------------------------------------------------------
-#map raw data to 2-D image using PTR
+#map raw data to 2-D image using RPTR
 for i in gfa_a:
     x,y = RPTR(gfa_dataset[i])
     gfa_data_form=gfa_data_form+x
