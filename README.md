@@ -1,5 +1,6 @@
-# glass-froming-ability-prediction
-predicting GFA using periodical table representation and CNN
+# prediction of glass-froming-ability (GFA) & phases of high-entropy alloys (HEAs)
+Predicting GFA using periodical table representation and convolutional neural network (CNN) with a dataset of 10000+ data points.
+Predicting phases in HEAs with a small dataset of 355 data points by transfer learning.
 
 Pickle formatted file 'gfa_dataset.txt' contains the raw data of 10000+ GFA data.
 Pickle formatted file 'element_property.txt' and 'Z_row_column.txt' contain information of 108 chemcial elements' atomic numbers, row numbers, and column number etc.
