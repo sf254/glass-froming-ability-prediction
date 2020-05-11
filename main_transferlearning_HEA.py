@@ -18,12 +18,12 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 
-[x0,dataY]=pickle.load(open('gao_data.txt', 'rb'))#原始数据集
+[x0,dataY]=pickle.load(open('gao_data.txt', 'rb'))#read into dataset
 
 x_im=np.array([aux_fun1.image(i) for i in x0])#map to 2D image & to np
 dataY=np.array(dataY)
 
-#choose one extractor from CNN_PTR_best0 to CNN_PTR_best9
+#choose one features generator from CNN_PTR_best0 to CNN_PTR_best9
 dataX = cf.cnn_extractor(model = cf.cnn_struture0(),\
                          pathWb = "CNN_PTR_best7.h5",\
                          x0 = x_im, path_dense = '')
